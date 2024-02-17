@@ -1,0 +1,35 @@
+span img {
+  float: left;
+  padding: 12px 4px 0px 4px;
+}
+
+.sidebar-header h1{
+	margin-right: 30px !important;
+}
+
+.bg-camera {
+	background-color: #636E72;
+}
+
+.center-icon {
+	margin: 220px auto !important;		
+}
+
+.maintenance-add-button{
+	display:flex;
+	float: right !important;
+}
+
+.maintenance-archive-button{
+	display:flex;
+	float: left !important;
+}
+
+
+
+.maintenance-action-button{
+	width: auto !important;
+	display: inline-block !important; 
+}	
+
+
