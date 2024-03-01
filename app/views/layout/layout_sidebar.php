@@ -4,10 +4,11 @@
         <!-- Sidebar scroll-->
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="dashboard.php" class="text-nowrap logo-img">
+            <a href="course.php" class="text-nowrap logo-img">
 				<span class="sidebar-header">
-					<img src="<?=ASSETS?>logo.png" height="38px" width="40px">
-					<h1 class="display-6" >Test Site</h1>
+					<img src="<?=ASSETS?>logo.png" height="38px" width="40px"> 
+					
+					<h4 class="display-10" style="margin: 10px; padding-left: 10px;" >&nbsp;&nbsp;<?=WEBSITE_TITLE?></h4>
 				</span>
             </a>
             <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -18,19 +19,11 @@
           <nav class="sidebar-nav scroll-sidebar" data-simplebar>
             <ul id="sidebarnav">
               <!-- ============================= -->
-              <!-- Home -->
+              <!-- Dashboard -->
               <!-- ============================= -->
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Home</span>
-              </li>
-              <li class="sidebar-item  <?php echo $data['page_title'] == "Dashboard" ? 'selected' : ''?>">
-                <a class="sidebar-link" href="<?=ROOT?>dashboard" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-aperture"></i>
-                  </span>
-                  <span class="hide-menu">Dashboard</span>
-                </a>
               </li>
 			  
 			  <li class="sidebar-item  <?php echo $data['page_title'] == "Courses" ? 'selected' : ''?>">

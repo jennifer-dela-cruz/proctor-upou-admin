@@ -19,26 +19,6 @@
                 
                  
                   <li class="nav-item dropdown">
-                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="ti ti-bell-ringing"></i>
-                      <div class="notification bg-primary rounded-circle"></div>
-                    </a>
-                    <div class="dropdown-menu content-dd dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                      <div class="d-flex align-items-center justify-content-between py-3 px-7">
-                        <h5 class="mb-0 fs-5 fw-semibold">Notifications</h5>
-                        <span class="badge bg-primary rounded-4 px-3 py-1 lh-sm">0 new</span>
-                      </div>
-                      <div class="message-body" data-simplebar>
-						 <div class="d-grid py-4 px-7 pt-8">
-                          <p class="text-center">No New Notifications</p>
-                        </div>
-                      </div>
-                      <div class="py-6 px-7 mb-1">
-                        <button class="btn btn-outline-primary w-100"> See All Notifications </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
                     <a class="nav-link pe-0" href="javascript:void(0)" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
                       <div class="d-flex align-items-center">
                         <div class="user-profile-img">

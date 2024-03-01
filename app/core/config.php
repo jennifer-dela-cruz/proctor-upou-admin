@@ -2,7 +2,7 @@
 
 /*set your website title*/
 
-define('WEBSITE_TITLE', "Test Site");
+define('WEBSITE_TITLE', "Admin Portal");
 
 /*set database variables*/
 
