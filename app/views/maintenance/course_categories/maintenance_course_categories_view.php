@@ -54,6 +54,7 @@ $this->view("main_view", $data);
                           </tr>
                         </thead>
 						<tbody>
+						 <?php if(@$data['course_list']): ?> 
 					  <?php foreach($data['course_categories_data'] as $row): ?>
 
 						  <tr>
@@ -77,6 +78,7 @@ $this->view("main_view", $data);
 							</td>
                           </tr>
 					  <?php endforeach; ?>
+					  	<?php endif; ?> 
                         </tbody>
                       </table>
                     </div>

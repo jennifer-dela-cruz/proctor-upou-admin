@@ -41,7 +41,7 @@ Class Quiz_Model
 						left JOIN mdl_quiz as quiz ON quiz.id = attemptlist.quiz_id 
 						left join mdl_user as student ON student.id = attemptlist.user_id 
 						left JOIN mdl_course as course ON quiz.course = course.id 
-					where quiz.id = :quizid;";
+					where quiz.id = :quizid group by student.id;";
 
 		$params = ['quizid' => $quizid];
 		

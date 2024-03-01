@@ -17,12 +17,15 @@ Class User_Model
 	
 			
 			//$query = "select user.id, user.username, user.firstname, user.lastname, user.email,user.address, user.city, IFNULL(role.shortname, 'Unassigned') as role from mdl_user as user left JOIN mdl_role as role ON user.roleid = role.id where (user.username = :unameoremail OR user.email = :unameoremail) && user.password = :password limit 1";
-			$query = "select user.id, user.username, user.firstname, user.lastname, user.email,user.address, user.city from mdl_user as user  where (user.username = :unameoremail OR user.email = :unameoremail) limit 1";
+			$query = "select user.id, user.username, user.firstname, user.lastname, user.email,user.address, user.city from mdl_user as user 
+						left JOIN mdl_proctor_upou_admin_portal_professors as proctors ON user.id = proctors.user_id
+						where (user.username = :unameoremail OR user.email = :unameoremail)  and user.id = proctors.user_id limit 1";
 			
 			$data = $DB->read($query,$arr);
+				console($data);
 			if(is_array($data))
 			{
-				
+			
 				if(count($data) > 0){
 					//logged in
 					$_SESSION['username'] = $data[0]->username;
@@ -31,7 +34,7 @@ Class User_Model
 					$_SESSION['email'] = $data[0]->email;
 					$_SESSION['id'] = $data[0]->id;
 					
-					header("Location:". ROOT . "home");
+					header("Location:". ROOT . "course");
 					die;
 				}else{
 					$validation['valid'] = false;

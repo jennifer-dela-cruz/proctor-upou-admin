@@ -28,47 +28,10 @@ $this->view("main_view", $data);
                 <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search Contact">
                 <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
               </form>
-            </div>
+            </div>  
+			
             <div class="d-flex w-100">
-              <div class="left-part border-end w-20 flex-shrink-0 d-none d-lg-block">
-                <div class="px-9 pt-4 pb-3">
-                  <a href="<?=ROOT?>course/create" class="btn btn-primary fw-semibold py-8 w-100">Add New Course</a>
-                </div>
-                <ul class="list-group" style="height: calc(100vh - 400px)" data-simplebar>
-                  <li class="list-group-item border-0 p-0 mx-9">
-                    <a class="d-flex align-items-center gap-2 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
-                      <i class="ti ti-inbox fs-5"></i>All Courses</a>
-                  </li>
-				  <li class="list-group-item border-0 p-0 mx-9">
-                    <a class="d-flex align-items-center gap-2 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
-                      <i class="ti ti-star fs-5"></i>Starred</a>
-                  </li>
-				  <li class="list-group-item border-0 p-0 mx-9">
-                    <a class="d-flex align-items-center gap-2 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
-                      <i class="ti ti-player-record-filled fs-5 text-success"></i>On Going</a>
-                  </li>
-				  <li class="list-group-item border-0 p-0 mx-9">
-                    <a class="d-flex align-items-center gap-2 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
-                      <i class="ti ti-player-record-filled fs-5 text-warning"></i>Pending</a>
-                  </li>
-                  <li class="list-group-item border-0 p-0 mx-9">
-                    <a class="d-flex align-items-center gap-2 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
-                      <i class="ti ti-archive fs-5"></i>Archived</a>
-                  </li>
-                  <li class="border-bottom my-3"></li>
-                  <li class="fw-semibold text-dark text-uppercase mx-9 my-2 px-3 fs-2">CATEGORIES</li>
-				  <?php if(@$data['course_categories']): ?> 
-							<?php foreach((array) @$data['course_categories'] as $row): ?> 
-								<li class="list-group-item border-0 p-0 mx-9">
-									<a class="d-flex align-items-center gap-2 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1" href="javascript:void(0)">
-									  <i class="ti ti-bookmark fs-5 text-primary"></i><?=$row->name?> </a>
-								  </li>
-							<?php endforeach; ?> 
-				  <?php endif; ?> 
-                  
-                 
-                </ul>
-              </div>
+              
               <div class="d-flex w-100">
                 <div class="min-width-340">
                   <div class="border-end user-chat-box h-100">
@@ -113,24 +76,12 @@ $this->view("main_view", $data);
                                 <i class="ti ti-arrow-left"></i>
                               </a>
                             </li>
-                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Important">
-								 <a href="" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-warning text-white font-medium d-flex align-items-center">
-									<i class="ti ti-star fs-4 me-2"></i>
-									Star
-								</a> 
-                            </li> &nbsp;&nbsp;&nbsp;
                             <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit Course Details">
 								 <a href="<?=ROOT?>course/edit/<?=$data['course_data'][0]->id?>" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-info text-white font-medium d-flex align-items-center">
 									<i class="ti ti-pencil fs-4 me-2"></i>
 									Edit
 								</a> 
                             </li> &nbsp;&nbsp;&nbsp;
-							 <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Archive Course">
-								 <a href="" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-danger text-white font-medium d-flex align-items-center">
-									<i class="ti ti-trash fs-4 me-2"></i>
-									Archive
-								</a> 
-                            </li>
                           </ul>
                         </div>
 					

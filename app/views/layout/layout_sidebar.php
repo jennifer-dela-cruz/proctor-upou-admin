@@ -4,7 +4,7 @@
         <!-- Sidebar scroll-->
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="course.php" class="text-nowrap logo-img">
+            <a href="course" class="text-nowrap logo-img">
 				<span class="sidebar-header">
 					<img src="<?=ASSETS?>logo.png" height="38px" width="40px"> 
 					
@@ -42,14 +42,6 @@
                   <span class="hide-menu">Quizes</span>
                 </a>
               </li>
-			  <li class="sidebar-item  <?php echo $data['page_title'] == "Students" ? 'selected' : ''?>">
-                <a class="sidebar-link" href="<?=ROOT?>student" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-user"></i>
-                  </span>
-                  <span class="hide-menu">Students</span>
-                </a>
-              </li>
               <!-- <li class="sidebar-item <?php echo $data['page_title'] == "Exam" ? 'selected' : ''  ?>">
                 <a class="sidebar-link" href="<?=ROOT?>test" aria-expanded="false">
                   <span>
@@ -61,14 +53,6 @@
 			  <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Maintenance</span>
-              </li>
-			  <li class="sidebar-item <?php echo $data['page_title'] == "User" ? 'selected' : ''  ?>">
-                <a class="sidebar-link" href="<?=ROOT?>maintenance/user" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-settings-2"></i>
-                  </span>
-                  <span class="hide-menu">Users</span>
-                </a>
               </li>
 			  <li class="sidebar-item <?php echo $data['page_title'] == "Course Categories" ? 'selected' : ''  ?>">
                 <a class="sidebar-link" href="<?=ROOT?>maintenance/course_categories" aria-expanded="false">
