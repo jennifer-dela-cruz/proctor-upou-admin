@@ -1,5 +1,10 @@
 <?php
 
+/*****************************************************/
+/* Class for MySQL                                   */
+/* Uses PDO library                                  */
+/*****************************************************/
+
 Class Database
 {
 	public function db_connect()
@@ -8,16 +13,16 @@ Class Database
 		try{
 
 			$string = DB_TYPE .":host=".DB_HOST.";dbname=".DB_NAME.";";
-			
+
 			$db = new PDO($string,DB_USER,DB_PASS);
 			return $db;
-			
-		}catch(PDOExecption $e){
+
+		}catch(PDOException $e){
 
 			die($e->getMessage());
 		}
-	}	
-	
+	}
+
 	public function read($query,$data = [])
 	{
 
@@ -50,7 +55,7 @@ Class Database
 			return false;
 		}
 	}
-	
+
 	public function write($query,$data = [])
 	{
 

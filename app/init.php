@@ -1,7 +1,9 @@
 <?php
-
-
-//Autoloader
+/************************************/
+/* Autoloader                       */
+/* Initializes the MVC              */
+/* Loads all the common libraries   */
+/************************************/
 require "../app/modules/aws.phar";
 
 require "../app/core/config.php";

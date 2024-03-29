@@ -1,4 +1,9 @@
 <?php
+
+/*****************************************************/
+/* Common functions                                  */
+/*****************************************************/
+
 use Aws\S3\S3Client;
 use Aws\Exception\AwsException;
 
@@ -16,7 +21,7 @@ function console($stuff)
 
 function getValue($name, $type){
 	if($type=="text"){
-		echo isset($_POST[$name])?'value="'.htmlspecialchars($_POST[$name]).'"':''; 
+		echo isset($_POST[$name])?'value="'.htmlspecialchars($_POST[$name]).'"':'';
 	}else if($type=="select"){
 		return isset($_POST[$name])?$_POST[$name]:'';
 	}
@@ -31,10 +36,10 @@ function c_file_exists($file){
 }
 
 function getS3Object($url){
-	
+
 	$result = new stdClass();
-	
-	//Get an instance of S3 Client. This is one one to do it:
+
+	// Get an instance of S3 Client. This is one one to do it:
 	$s3Client = new S3Client([
 		'version'     => 'latest',
 		'region'      => 'us-east-1', //Region of the bucket
@@ -43,45 +48,45 @@ function getS3Object($url){
 			'secret'  => 'nA3Y6O+uzHYzFmiQwt+NNe1FjZwno0e7KSxmlngZ',
 		)
 	]);
-	
+
 	$imgUrlArr = explode("/", $url);
 	$bucketName = "";
 	$imgKey = "";
-	
+
 	if(count($imgUrlArr) > 1){
 		$bucketName = $imgUrlArr[0];
 		$imgKey = $imgUrlArr[1];
-		
+
 		$fileType = explode(".", $imgKey)[1];
-																			
-		
+
+
 	}else{
 		$bucketName = "upou-screen-stream"; //Default
 		$imgKey = $imgUrlArr[0];
-		
+
 		$fileType="jpeg";
 	}
-	
-	
+
+
 	try{
-		//Get a command to GetObject
+		// Get a command to GetObject
 		$cmd = $s3Client->getCommand('GetObject', [
 			'Bucket' => $bucketName,
 			'Key'    => $imgKey
 		]);
-		
-		
-		//The period of availability
+
+
+		// The period of availability
 		$request = $s3Client->createPresignedRequest($cmd, '+10 minutes');
 
-		//Get the pre-signed URL
-		$signedUrl = (string) $request->getUri();  
-	
+		// Get the pre-signed URL
+		$signedUrl = (string) $request->getUri();
+
 		$result->signedUrl = $signedUrl;
 		$result->fileType = $fileType;
 		$result->imgKey = $imgKey;
 		return $result;
 	}catch(Exception $exc){
-		
+
 	}
 }

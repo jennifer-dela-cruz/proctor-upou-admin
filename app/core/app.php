@@ -1,6 +1,11 @@
 <?php
 
-Class App 
+/*************************************************************/
+/* Handles the decoding of URL                               */
+/* If PHP file exists, it will load the file within the page */
+/*************************************************************/
+
+Class App
 {
 	private $controller = "home";
 	private $method = "index";

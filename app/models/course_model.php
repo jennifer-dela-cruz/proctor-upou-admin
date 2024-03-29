@@ -1,4 +1,9 @@
-<?php 
+<?php
+/*************************************************************/
+/* Course module model			                  	         */
+/* Loads data from MySQL                          			 */
+/*************************************************************/
+
 Class Course_Model
 {
 	function get_all()
@@ -14,13 +19,13 @@ Class Course_Model
 
 		return false;
 	}
-	
+
 	function get_course($id)
 	{
 		$query = "SELECT * FROM mdl_course where id = :id;";
 
 		$params = ['id' => $id];
-		
+
 		$DB = new Database();
 		$data = $DB->read($query, $params);
 		if(is_array($data))
@@ -30,7 +35,7 @@ Class Course_Model
 
 		return false;
 	}
-	
+
 	function get_categories()
 	{
 		$query = "SELECT id, name, description FROM mdl_course_categories where visible = 1;";
@@ -45,12 +50,12 @@ Class Course_Model
 
 		return false;
 	}
-	
+
 	function get_quiz_by_course($courseid){
 		$query = "SELECT * FROM mdl_quiz where course = :courseid;";
 
 		$params = ['courseid' => $courseid];
-		
+
 		$DB = new Database();
 		$data = $DB->read($query, $params);
 		if(is_array($data))
@@ -60,15 +65,15 @@ Class Course_Model
 
 		return false;
 	}
-	
-	
+
+
 	function create_course($POST){
 		$validation = $this->validate_course($POST);
 
 		//if valid
 		if($validation['isPosted'])
 		{
-			
+
 				$DB = new Database();
 
 				$arr['fullname'] = $POST['coursename'];
@@ -77,18 +82,18 @@ Class Course_Model
 				$arr['category'] = $POST['coursecategory'];
 
 
-				$query = "insert into mdl_course (fullname,		
+				$query = "insert into mdl_course (fullname,
 												category,
-												shortname,	
-												idnumber) 
+												shortname,
+												idnumber)
 												VALUES
-												(:fullname,		
+												(:fullname,
 												:category,
-												:shortname,	
+												:shortname,
 												:idnumber)";
 				$data = $DB->write($query,$arr);
-				
-				
+
+
 				if($data)
 				{
 					return $validation;
@@ -104,9 +109,9 @@ Class Course_Model
 			return $validation;
 		}
 	}
-	
+
 	function edit_course($POST, $id){
-		
+
 		$validation = $this->validate_course($POST);
 
 		//if valid
@@ -120,16 +125,16 @@ Class Course_Model
 				$arr['idnumber'] = $POST['coursenumber'];
 				$arr['category'] = $POST['coursecategory'];
 
-												
-			    $query = "update mdl_course SET fullname = :fullname,		
-											  shortname = :shortname,	
+
+			    $query = "update mdl_course SET fullname = :fullname,
+											  shortname = :shortname,
 											  idnumber = :idnumber,
 											  category = :category
 										WHERE id = :id";
-				
-				$data = $DB->write($query,$arr); 
-			
-			
+
+				$data = $DB->write($query,$arr);
+
+
 				if($data)
 				{
 					return $validation;
@@ -146,36 +151,36 @@ Class Course_Model
 
 			return $validation;
 		}
-	
+
 	}
 	function validate_course($POST){
-		
+
 		$isValid['isPosted'] = true;
 		$isValid['errorMessages'] = [];
-		
+
 		if($POST['coursename'] == ""){
 			$isValid['isPosted'] = false;
 			array_push($isValid['errorMessages'], "Missing Course Name");
 		}
-		
+
 		if($POST['courseshort'] == ""){
 			$isValid['isPosted'] = false;
 			array_push($isValid['errorMessages'], "Missing Course Shortname");
 		}
-		
+
 		if($POST['coursecode'] == ""){
 			$isValid['isPosted'] = false;
 			array_push($isValid['errorMessages'], "Missing Course Code");
 		}
-		
+
 		if($POST['coursenumber'] == ""){
 			$isValid['isPosted'] = false;
 			array_push($isValid['errorMessages'], "Missing Course Number");
 		}
-		
-		
+
+
 		return $isValid;
 	}
-	
-	
+
+
 }
