@@ -10,7 +10,7 @@ Class Quiz extends Controller
 {
 
 	function index($action = '', $id = ''){
-		$data['page_title'] = "Quizes";
+		$data['page_title'] = "Quizzes";
 		$quiz = $this->loadModel("quiz_model");
 
 

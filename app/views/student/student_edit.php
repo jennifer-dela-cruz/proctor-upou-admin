@@ -1,4 +1,4 @@
-<?php 
+<?php
  $this->view("main_view", $data);
 ?>
 
@@ -10,25 +10,25 @@
               <li class="nav-item" role="presentation">
                 <button class="nav-link position-relative rounded-0 active d-flex align-items-center justify-content-center bg-transparent fs-3 py-4" id="pills-account-tab" data-bs-toggle="pill" data-bs-target="#pills-account" type="button" role="tab" aria-controls="pills-account" aria-selected="true">
                   <i class="ti ti-user-circle me-2 fs-6"></i>
-                  <span class="d-none d-md-block">Account</span> 
+                  <span class="d-none d-md-block">Account</span>
                 </button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-4" id="pills-notifications-tab" data-bs-toggle="pill" data-bs-target="#pills-notifications" type="button" role="tab" aria-controls="pills-notifications" aria-selected="false">
                   <i class="ti ti-bell me-2 fs-6"></i>
-                  <span class="d-none d-md-block">Courses</span> 
+                  <span class="d-none d-md-block">Courses</span>
                 </button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-4" id="pills-bills-tab" data-bs-toggle="pill" data-bs-target="#pills-bills" type="button" role="tab" aria-controls="pills-bills" aria-selected="false">
                   <i class="ti ti-article me-2 fs-6"></i>
-                  <span class="d-none d-md-block">Quizes</span> 
+                  <span class="d-none d-md-block">Quizzes</span>
                 </button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link position-relative rounded-0 d-flex align-items-center justify-content-center bg-transparent fs-3 py-4" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security" aria-selected="false">
                   <i class="ti ti-lock me-2 fs-6"></i>
-                  <span class="d-none d-md-block">Security</span> 
+                  <span class="d-none d-md-block">Security</span>
                 </button>
               </li>
             </ul>
@@ -156,8 +156,8 @@
                     <th>Action</th>
                   </thead>
                   <tbody>
-				  <?php if(@$data['course_available']): ?> 
-							<?php foreach((array) @$data['course_available'] as $row): ?> 
+				  <?php if(@$data['course_available']): ?>
+							<?php foreach((array) @$data['course_available'] as $row): ?>
 								<!-- start row -->
 								<tr class="search-items">
 								  <td>
@@ -197,12 +197,12 @@
 								  </td>
 								</tr>
 								<!-- end row -->
-							<?php endforeach; ?> 
-					<?php endif; ?> 
+							<?php endforeach; ?>
+					<?php endif; ?>
                   </tbody>
                 </table>
               </div>
-            
+
                         </div>
                       </div>
                     </div>
@@ -227,16 +227,16 @@
                     <th>Category</th>
                     <th>Action</th>
                   </thead>
-                  <tbody>				  
+                  <tbody>
                   </tbody>
                 </table>
               </div>
-            
-                        
+
+
                         </div>
                       </div>
                     </div>
-					
+
                     <div class="col-12">
                       <div class="d-flex align-items-center justify-content-end gap-3">
                         <button class="btn btn-primary">Save</button>
@@ -247,8 +247,8 @@
                 </div>
                 <div class="tab-pane fade" id="pills-bills" role="tabpanel" aria-labelledby="pills-bills-tab" tabindex="0">
                   <div class="row justify-content-center">
-                    
-                      
+
+
                     </div>
                     <div class="col-12">
                       <div class="d-flex align-items-center justify-content-end gap-3">
@@ -304,7 +304,7 @@
                           <div class="d-flex align-items-center justify-content-between py-3 border-bottom">
                             <div class="d-flex align-items-center gap-3">
                               <i class="ti ti-device-mobile text-dark d-block fs-7" width="26" height="26"></i>
-                              <div> 
+                              <div>
                                 <h5 class="fs-4 fw-semibold mb-0">iPhone 14</h5>
                                 <p class="mb-0">London UK, Oct 23 at 1:15 AM</p>
                               </div>
@@ -316,7 +316,7 @@
                           <div class="d-flex align-items-center justify-content-between py-3">
                             <div class="d-flex align-items-center gap-3">
                               <i class="ti ti-device-laptop text-dark d-block fs-7" width="26" height="26"></i>
-                              <div> 
+                              <div>
                                 <h5 class="fs-4 fw-semibold mb-0">Macbook Air</h5>
                                 <p class="mb-0">Gujarat India, Oct 24 at 3:15 AM</p>
                               </div>
@@ -342,11 +342,11 @@
           </div>
     </div>
 	 <div class="col-lg-1"></div>
-</div>	
-	   
-	   
-<?php 
+</div>
+
+
+<?php
  $this->view("layout/layout_footer", $data);
 ?>
-	  
+
 

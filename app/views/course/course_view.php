@@ -1,4 +1,4 @@
-<?php 
+<?php
 $this->view("main_view", $data);
 ?>
 
@@ -12,12 +12,12 @@ $this->view("main_view", $data);
 				<li class="breadcrumb-item">Course List</li>
 			  </ol>
 			</nav>
-			  
+
 			</div>
 		  </div>
 		</div>
 	</div>
-	
+
 	<div class="container-fluid">
           <div class="card overflow-hidden chat-application">
             <div class="d-flex align-items-center justify-content-between gap-3 m-3 d-lg-none">
@@ -28,10 +28,10 @@ $this->view("main_view", $data);
                 <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search Contact">
                 <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
               </form>
-            </div>  
-			
+            </div>
+
             <div class="d-flex w-100">
-              
+
               <div class="d-flex w-100">
                 <div class="min-width-340">
                   <div class="border-end user-chat-box h-100">
@@ -43,8 +43,8 @@ $this->view("main_view", $data);
                     </div>
                     <div class="app-chat">
                       <ul class="chat-users" style="height: calc(100vh - 400px)" data-simplebar>
-					  <?php if(@$data['course_list']): ?> 
-							<?php foreach((array) @$data['course_list'] as $row): ?> 
+					  <?php if(@$data['course_list']): ?>
+							<?php foreach((array) @$data['course_list'] as $row): ?>
 								<li>
 								  <a href="<?=ROOT?>course/<?=$row->id?>" class="px-4 py-3 bg-hover-light-black d-flex align-items-center chat-user <?php if($data['course_data'][0]-> id == $row->id): ?> bg-light <?php endif; ?> "  data-user-id="<?=$row->id?>">
 									<span class="position-relative">
@@ -56,8 +56,8 @@ $this->view("main_view", $data);
 									</div>
 								  </a>
 								</li>
-							<?php endforeach; ?> 
-						<?php endif; ?> 
+							<?php endforeach; ?>
+						<?php endif; ?>
                       </ul>
                     </div>
                   </div>
@@ -80,11 +80,11 @@ $this->view("main_view", $data);
 								 <a href="<?=ROOT?>course/edit/<?=$data['course_data'][0]->id?>" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-info text-white font-medium d-flex align-items-center">
 									<i class="ti ti-pencil fs-4 me-2"></i>
 									Edit
-								</a> 
+								</a>
                             </li> &nbsp;&nbsp;&nbsp;
                           </ul>
                         </div>
-					
+
                         <div class="position-relative overflow-hidden">
                           <div class="position-relative">
                             <div class="chat-box p-9" style="height: calc(100vh - 428px)" data-simplebar>
@@ -103,7 +103,7 @@ $this->view("main_view", $data);
                     <div class="col-lg-12">
                       <div class="card">
                         <div class="card-body p-4">
-                          <h4 class="fw-semibold mb-3">Quizes</h4>
+                          <h4 class="fw-semibold mb-3">Quizzes</h4>
                           <div class="table-responsive">
 								<table class="table search-table a	lign-middle text-nowrap">
 								  <thead class="header-item">
@@ -112,8 +112,8 @@ $this->view("main_view", $data);
 									<th>Action</th>
 								  </thead>
 								  <tbody>
-								  <?php if(@$data['quiz_data']): ?> 
-											<?php foreach((array) @$data['quiz_data'] as $row): ?> 
+								  <?php if(@$data['quiz_data']): ?>
+											<?php foreach((array) @$data['quiz_data'] as $row): ?>
 												<!-- start row -->
 												<tr class="search-items">
 												  <td style="width: 30%">
@@ -121,7 +121,7 @@ $this->view("main_view", $data);
 													   <i class="ti ti-file-pencil fs-8 text-primary"></i>
 													  <div class="ms-3">
 														<div class="user-meta-info">
-														
+
 														  <span class="user-work fs-3" ><?=$row->name?></span>
 														</div>
 													  </div>
@@ -142,8 +142,8 @@ $this->view("main_view", $data);
 												  </td>
 												</tr>
 												<!-- end row -->
-											<?php endforeach; ?> 
-									<?php endif; ?> 
+											<?php endforeach; ?>
+									<?php endif; ?>
 								  </tbody>
 								</table>
 							  </div>
@@ -157,28 +157,28 @@ $this->view("main_view", $data);
                       </div>
                     </div>
                   </div>
-                
-                                  
+
+
                                 </div>
                               </div>
                               </div>
                             </div>
                           </div>
                         </div>
-						
+
 					  </div>
                     </div>
                   </div>
                 </div>
 				 <?php else: ?>
-							
+
 				<?php endif; ?>
 			  </div>
-             
+
             </div>
           </div>
         </div>
-<?php 
+<?php
  $this->view("layout/layout_footer", $data);
 ?>
 
