@@ -135,9 +135,9 @@ $this->view("main_view", $data);
 													  <a href="<?=ROOT?>quiz/<?=$row->id?>" class="text-info edit">
 														<i class="ti ti-eye fs-5"></i>
 													  </a>
-													  <a href="javascript:void(0)" class="text-dark delete ms-2">
+													  <!-- <a href="javascript:void(0)" class="text-dark delete ms-2">
 														<i class="ti ti-trash fs-5"></i>
-													  </a>
+													  </a> -->
 													</div>
 												  </td>
 												</tr>
