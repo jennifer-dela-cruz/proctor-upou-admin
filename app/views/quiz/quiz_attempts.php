@@ -247,7 +247,11 @@ use Aws\Exception\AwsException;
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Review Date:</label>
-									  <label><?=$data['proctor_status'][0]->violation_approval_datetime?></label>
+									  <label>
+									  <?php if ($data['proctor_status'][0]->violation_approval_datetime != 0): ?>
+										<?=$data['proctor_status'][0]->violation_approval_datetime?>
+									  <?php endif; ?>
+									  </label>
 									</span>
 								</div>
 							</div>
