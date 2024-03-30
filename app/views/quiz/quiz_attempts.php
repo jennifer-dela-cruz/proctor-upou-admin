@@ -309,6 +309,8 @@ use Aws\Exception\AwsException;
 										<?php
 											// change the casing of the violation
 											$row->violation = str_replace("_", " ", $row->violation);
+											$row->violation = ucfirst(strtolower($row->violation));
+
 										?>
 										<li>
 										<?php $result = getS3Object($row->path); ?>
