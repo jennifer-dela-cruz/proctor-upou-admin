@@ -2,7 +2,7 @@
 /**************************************************************/
 /* User and course modules controller			              */
 /* Checks the URL action parameter,                           */
-/* then it displays the requested view 						  */
+/* then it displays the requested model and view			  */
 /* Has create, save, edit, restore, delete, and default views */
 /**************************************************************/
 
