@@ -255,6 +255,8 @@ use Aws\Exception\AwsException;
 											// Create a DateTime object with the current date and time
 											$date = $data['proctor_status'][0]->violation_approval_datetime;
 
+											$date = DateTime::createFromFormat('Y-m-d H:i:s', $date);
+
 											// Set the timezone to Singapore
 											$date->setTimezone(new DateTimeZone('Asia/Singapore'));
 
