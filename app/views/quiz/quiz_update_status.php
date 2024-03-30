@@ -151,10 +151,12 @@
 											<?php if(isset($data['proctor_status'][0]->violation_initial_status)): ?>
 
 												<!-- Should be changed to string instead of boolean for more statuses like not applicable or error -->
-												<?php if($data['proctor_status'][0]->violation_approval_status): ?>
-													<label>Passed</label>
-												<?php else: ?>
-													<label>Failed</label>
+												<?php if ($data['proctor_status'][0]->violation_approval_datetime != 0): ?>
+													<?php if($data['proctor_status'][0]->violation_approval_status): ?>
+														<label>Passed</label>
+													<?php else: ?>
+														<label>Failed</label>
+													<?php endif; ?>
 												<?php endif; ?>
 											<?php endif; ?>
 										<?php endif; ?>
