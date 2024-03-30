@@ -251,6 +251,17 @@ use Aws\Exception\AwsException;
 									  <label class="form-label fw-semibold">Review Date:</label>
 									  <label>
 									  <?php if ($data['proctor_status'][0]->violation_approval_datetime != 0): ?>
+										<?php
+											// Create a DateTime object with the current date and time
+											$date = $data['proctor_status'][0]->violation_approval_datetime;
+
+											// Set the timezone to Singapore
+											$date->setTimezone(new DateTimeZone('Asia/Singapore'));
+
+											// Format the date
+											$date = $date->format('F d, Y g:i A');
+											$data['proctor_status'][0]->violation_approval_datetime = $date;
+										?>
 										<?=$data['proctor_status'][0]->violation_approval_datetime?>
 									  <?php endif; ?>
 									  </label>
