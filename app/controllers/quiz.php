@@ -33,6 +33,9 @@ Class Quiz extends Controller
 				$data['attempt_data'] = $quiz->get_quiz_attempt_by_student($quizId, $studentId);
 				$data['quiz_data'] = $quiz->get_quiz($quizId);
 
+				var_dump($data['attempt_data']);
+				exit;
+
 				if($success['isPosted'])
 				{
 					$data['successupdate'] = true;
@@ -53,6 +56,8 @@ Class Quiz extends Controller
 				if(isset($id) && $id != ""){
 					$data['attempt_data'] = $quiz->get_quiz_attempt_by_student($action, $id);
 
+					var_dump($data['attempt_data']);
+					exit;
 
 					// VIEW UPDATE PROCTOR STATUS
 					if(isset($_GET['update_status'])){
