@@ -273,7 +273,7 @@ use Aws\Exception\AwsException;
 									</span>
 								</div>
 
-								<div class="col-12">
+								<!-- <div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Time Start:</label>
 									   <label>December 8, 2023, 1:30PM</label>
@@ -284,7 +284,7 @@ use Aws\Exception\AwsException;
 									  <label class="form-label fw-semibold">Time End:</label>
 									   <label>December 8, 2023, 1:33PM</label>
 									</span>
-								</div>
+								</div> -->
 							</div>
                           </form>
 					   </div>
