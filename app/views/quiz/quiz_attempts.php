@@ -1,4 +1,4 @@
-<?php 
+<?php
 $this->view("main_view", $data);
 
 use Aws\S3\S3Client;
@@ -13,15 +13,15 @@ use Aws\Exception\AwsException;
 		  <div class="row align-items-center">
 			<div class="col-9">
 			  <h4 class="fw-semibold mb-8">Quiz Attempts</h4>
-			  <?php if(@$data['quiz_data']): ?> 
+			  <?php if(@$data['quiz_data']): ?>
 					<nav aria-label="breadcrumb">
 					  <ol class="breadcrumb">
 						 <li class="breadcrumb-item">
 						  <a class="text-muted text-decoration-none" href="
 											<?=ROOT?>course/<?=$data['quiz_data'][0]->courseid?>"><?=$data['quiz_data'][0]->coursename?></a>
 						</li>
-					
-						 <?php if(@$data['attempt_data']): ?> 
+
+						 <?php if(@$data['attempt_data']): ?>
 							 <li class="breadcrumb-item">
 							  <a class="text-muted text-decoration-none" href="
 												<?=ROOT?>quiz/<?=$data['quiz_data'][0]->id?>"><?=$data['quiz_data'][0]->name?></a>
@@ -32,14 +32,14 @@ use Aws\Exception\AwsException;
 						 <?php endif; ?>
 					  </ol>
 					</nav>
-					
-			<?php endif; ?> 
-			  
+
+			<?php endif; ?>
+
 			</div>
 		  </div>
 		</div>
 	</div>
-	
+
 	<div class="container-fluid">
           <div class="card overflow-hidden chat-application">
             <div class="d-flex align-items-center justify-content-between gap-3 m-3 d-lg-none">
@@ -63,8 +63,8 @@ use Aws\Exception\AwsException;
                     </div>
                     <div class="app-chat">
                       <ul class="chat-users" style="height: calc(100vh - 400px)" data-simplebar>
-					  <?php if(@$data['attempt_list']): ?> 
-							<?php foreach((array) @$data['attempt_list'] as $row): ?> 
+					  <?php if(@$data['attempt_list']): ?>
+							<?php foreach((array) @$data['attempt_list'] as $row): ?>
 								<li>
 								  <a href="<?=ROOT?>quiz/<?=$row->quizid?>/<?=$row->studentid?>" class="px-4 py-3 bg-hover-light-black d-flex align-items-center chat-user <?php if($data['attempt_list'][0]->attemptid == $row->attemptid): ?> bg-light <?php endif; ?> "  data-user-id="<?=$row->attemptid?>">
 									<span class="position-relative">
@@ -75,8 +75,8 @@ use Aws\Exception\AwsException;
 									</div>
 								  </a>
 								</li>
-							<?php endforeach; ?> 
-						<?php endif; ?> 
+							<?php endforeach; ?>
+						<?php endif; ?>
                       </ul>
                     </div>
                   </div>
@@ -99,11 +99,11 @@ use Aws\Exception\AwsException;
 								 <a href="<?=ROOT?>quiz/<?=$data['quiz_data'][0]->id?>/<?=$data['attempt_data'][0]->studentid?>?update_status=1" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-info text-white font-medium d-flex align-items-center">
 									<i class="ti ti-pencil fs-4 me-2"></i>
 									Update Proctor Status
-								</a> 
+								</a>
                             </li>
                           </ul>
                         </div>
-					
+
                         <div class="position-relative overflow-hidden">
                           <div class="position-relative">
                             <div class="chat-box p-9" style="height: calc(100vh - 428px)" data-simplebar>
@@ -117,10 +117,10 @@ use Aws\Exception\AwsException;
 							<div class="col-6">
 							  <p class="card-subtitle mb-4"></p>
 							  <div class="text-center">
-									<?php if(@$data['proctor_status']){  
+									<?php if(@$data['proctor_status']){
 											foreach((array) @$data['proctor_status'] as $row){
 												if($row->user_id == $data['attempt_data'][0]->studentid){
-													$photoResult = getS3Object($row->verify_face_path); 
+													$photoResult = getS3Object($row->verify_face_path);
 												}
 											}
 										  }else{
@@ -130,16 +130,16 @@ use Aws\Exception\AwsException;
 								<div class="d-flex align-items-center justify-content-center my-4 gap-3">
 								  <p class="mb-0">Face Photo</p>
 								</div>
-								
+
 							  </div>
 							</div>
 							<div class="col-6">
 							  <p class="card-subtitle mb-4"></p>
 							  <div class="text-center">
-								<?php if(@$data['proctor_status']){  
+								<?php if(@$data['proctor_status']){
 											foreach((array) @$data['proctor_status'] as $row){
 												if($row->user_id == $data['attempt_data'][0]->studentid){
-													$photoResult = getS3Object($row->verify_id_path); 
+													$photoResult = getS3Object($row->verify_id_path);
 												}
 											}
 										  }else{
@@ -155,21 +155,21 @@ use Aws\Exception\AwsException;
 						  <div class="row">
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Username:</label> 
+									  <label class="form-label fw-semibold">Username:</label>
 									  <label><?=$data['attempt_data'][0]->username?></label>
-									</span> 
+									</span>
 								</div>
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Email:</label> 
+									  <label class="form-label fw-semibold">Email:</label>
 									  <label><?=$data['attempt_data'][0]->email?></label>
-									</span> 
+									</span>
 								</div>
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Name:</label> 
+									  <label class="form-label fw-semibold">Name:</label>
 									  <label><?=$data['attempt_data'][0]->studentfirstname?> <?=$data['attempt_data'][0]->studentlastname?></label>
-									</span> 
+									</span>
 								</div>
 						  </div>
                         </div>
@@ -182,118 +182,118 @@ use Aws\Exception\AwsException;
                           <p class="card-subtitle mb-4"></p>
                           <form class="mb-4">
 							<div class="row">
-							
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Proctoring Type:</label> 
+									  <label class="form-label fw-semibold">Proctoring Type:</label>
 									  <label>Automated Proctoring</label>
-									</span> 
+									</span>
 								</div>
-								
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Total Violations:</label> 
+									  <label class="form-label fw-semibold">Total Violations:</label>
 									  <label><?=count($data['attempt_data'])?></label>
-									</span> 
+									</span>
 								</div>
-								
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Initial Status:</label> 
-									   <?php if(@$data['proctor_status']): ?>  
+									  <label class="form-label fw-semibold">Initial Status:</label>
+									   <?php if(@$data['proctor_status']): ?>
 											<?php if(isset($data['proctor_status'][0]->violation_initial_status)): ?>
-											
+
 												<!-- Should be changed to string instead of boolean for more statuses like not applicable or error -->
 												<?php if($data['proctor_status'][0]->violation_initial_status): ?>
-													<label>Passed</label>	
+													<label>Passed</label>
 												<?php else: ?>
-													<label>Failed</label>	
+													<label>Failed</label>
 												<?php endif; ?>
 											<?php endif; ?>
 										<?php endif; ?>
-									</span> 
+									</span>
 								</div>
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Final Status:</label> 
-									   <?php if(@$data['proctor_status']): ?>  
+									  <label class="form-label fw-semibold">Final Status:</label>
+									   <?php if(@$data['proctor_status']): ?>
 											<?php if(isset($data['proctor_status'][0]->violation_initial_status)): ?>
-											
+
 												<!-- Should be changed to string instead of boolean for more statuses like not applicable or error -->
 												<?php if($data['proctor_status'][0]->violation_approval_status): ?>
-													<label>Passed</label>	
+													<label>Passed</label>
 												<?php else: ?>
-													<label>Failed</label>	
+													<label>Failed</label>
 												<?php endif; ?>
 											<?php endif; ?>
 										<?php endif; ?>
-									</span> 
+									</span>
 								</div>
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Final Status Reason:</label> 
+									  <label class="form-label fw-semibold">Final Status Reason:</label>
 									  <label><?=$data['proctor_status'][0]->violation_approval_reason?></label>
-									</span> 
+									</span>
 								</div>
-								
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Reviewer:</label> 
+									  <label class="form-label fw-semibold">Reviewer:</label>
 									  <label><?=$data['proctor_status'][0]->firstname?> <?=$data['proctor_status'][0]->lastname?></label>
-									</span> 
+									</span>
 								</div>
-								
-								
+
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Review Date:</label> 
+									  <label class="form-label fw-semibold">Review Date:</label>
 									  <label><?=$data['proctor_status'][0]->violation_approval_datetime?></label>
-									</span> 
+									</span>
 								</div>
 							</div>
                           </form>
-						<h5 class="card-title fw-semibold ">Quiz Information</h5>        		
+						<h5 class="card-title fw-semibold ">Quiz Information</h5>
 						<form>
 							<div class="row">
-							
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Quiz Name:</label> 
-									  <label><?php if(@$data['attempt_data']): ?>  
+									  <label class="form-label fw-semibold">Quiz Name:</label>
+									  <label><?php if(@$data['attempt_data']): ?>
 												<?=$data['attempt_data'][0]->quizname?>
 											<?php endif; ?>
 									  </label>
-									</span>  
+									</span>
 								</div>
-								
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">State:</label> 
+									  <label class="form-label fw-semibold">State:</label>
 									  <label>In progress</label>
-									</span> 
+									</span>
 								</div>
-								
+
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Time Start:</label> 
+									  <label class="form-label fw-semibold">Time Start:</label>
 									   <label>December 8, 2023, 1:30PM</label>
-									</span> 
+									</span>
 								</div>
 								<div class="col-12">
 									<span>
-									  <label class="form-label fw-semibold">Time End:</label> 
+									  <label class="form-label fw-semibold">Time End:</label>
 									   <label>December 8, 2023, 1:33PM</label>
-									</span> 
+									</span>
 								</div>
 							</div>
-                          </form>						
+                          </form>
 					   </div>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="card">
                         <div class="card-body p-4">
-                          <h5 class="card-title fw-semibold">Evidences <span class="badge bg-secondary"><?=count($data['attempt_data'])?></span></h5> 
+                          <h5 class="card-title fw-semibold">Evidences <span class="badge bg-secondary"><?=count($data['attempt_data'])?></span></h5>
 						  </s
                           <p class="card-subtitle mb-4"></p>
 							 <div class="px-4 pt-9 pb-6 d-none d-lg-block">
@@ -304,19 +304,23 @@ use Aws\Exception\AwsException;
 							</div>
 							<div class="app-chat">
 							  <ul class="quiz-evidences" data-simplebar>
-							  <?php if(@$data['attempt_data']): ?> 
-									<?php foreach((array) @$data['attempt_data'] as $row): ?> 
+							  <?php if(@$data['attempt_data']): ?>
+									<?php foreach((array) @$data['attempt_data'] as $row): ?>
+										<?php
+											// change the casing of the violation
+											$row->violation = str_replace("_", " ", $row->violation);
+										?>
 										<li>
 										<?php $result = getS3Object($row->path); ?>
 										  <a href="javascript: void(0)" onclick="showImageModal('<?=$result->signedUrl?>', '<?=$result->imgKey?>', '<?=$result->fileType?>')" data-toggle="modal" data-target="#exampleModal" class="px-4 py-3 bg-hover-light-black d-flex align-items-center chat-user"  data-user-id="<?=$row->attemptid?>">
 											<span class="position-relative">
-											  <img  src="<?php if($result->fileType == "mp4"): ?>  
+											  <img  src="<?php if($result->fileType == "mp4"): ?>
 															<?php echo ASSETS.'assets/images/video-play-button-con.png'; ?>
 														<?php else: ?>
 															<?php echo $result->signedUrl; ?>
-														<?php endif; ?>" 
+														<?php endif; ?>"
 													alt="Image not found" onerror="this.src='<?=ASSETS?>assets/images/violation-icon.png';" width="180" height="180">
-																
+
 											</span>
 											<div class="ms-6 d-inline-block w-75">
 											  <h5 class="mb-1 fw-semibold chat-title"><?=$row->violation?></h5>
@@ -324,34 +328,34 @@ use Aws\Exception\AwsException;
 											</div>
 										  </a>
 										</li>
-									<?php endforeach; ?> 
-								<?php endif; ?> 
+									<?php endforeach; ?>
+								<?php endif; ?>
 							  </ul>
 							</div>
 						</div>
                       </div>
                     </div>
                   </div>
-                
+
 							  </div>
                               </div>
                             </div>
                           </div>
                         </div>
-						
+
 					  </div>
                     </div>
                   </div>
                 </div>
 				 <?php else: ?>
-							
+
 				<?php endif; ?>
 			  </div>
-             
+
             </div>
           </div>
         </div>
-		
+
 		<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -372,7 +376,7 @@ use Aws\Exception\AwsException;
     </div>
   </div>
 </div>
-<?php 
+<?php
  $this->view("layout/layout_footer", $data);
 ?>
 
@@ -384,7 +388,7 @@ use Aws\Exception\AwsException;
 <!-- <script>showToastr("Successfully edited user", "Success")</script> -->
 <?php endif; ?>
 
-<script> 
+<script>
 function showImageModal(imageUrl, fileName, fileType){
 	var domString = '<img src="'+ imageUrl +'"></img>'
 	if(fileType == "mp4"){
@@ -394,7 +398,7 @@ function showImageModal(imageUrl, fileName, fileType){
 	}else{
 		domString = '<img src="'+ imageUrl +'"></img>';
 	}
-	
+
 	Swal.fire({
           title: '<strong>'+fileName+ '</strong>',
           type: "info",
