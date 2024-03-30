@@ -1,13 +1,13 @@
       <!-- Sidebar Start -->
-      
+
       <aside class="left-sidebar">
         <!-- Sidebar scroll-->
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="course" class="text-nowrap logo-img">
 				<span class="sidebar-header">
-					<img src="<?=ASSETS?>logo.png" height="38px" width="40px"> 
-					
+					<img src="<?=ASSETS?>logo.png" height="38px" width="40px">
+
 					<h4 class="display-10" style="margin: 10px; padding-left: 10px;" >&nbsp;&nbsp;<?=WEBSITE_TITLE?></h4>
 				</span>
             </a>
@@ -25,7 +25,7 @@
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Home</span>
               </li>
-			  
+
 			  <li class="sidebar-item  <?php echo $data['page_title'] == "Courses" ? 'selected' : ''?>">
                 <a class="sidebar-link" href="<?=ROOT?>course" aria-expanded="false">
                   <span>
@@ -50,24 +50,24 @@
                   <span class="hide-menu">Exam</span>
                 </a>
               </li> -->
-			  <li class="nav-small-cap">
+			  <!--<li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Maintenance</span>
               </li>
-			  <li class="sidebar-item <?php echo $data['page_title'] == "Course Categories" ? 'selected' : ''  ?>">
-                <a class="sidebar-link" href="<?=ROOT?>maintenance/course_categories" aria-expanded="false">
+			  <li class="sidebar-item <?php //echo $data['page_title'] == "Course Categories" ? 'selected' : ''  ?>">
+                <a class="sidebar-link" href="<?//=ROOT?>maintenance/course_categories" aria-expanded="false">
                   <span>
                     <i class="ti ti-settings-2"></i>
                   </span>
                   <span class="hide-menu">Course Categories</span>
                 </a>
               </li>
-              
+    -->
           </nav>
           <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
       </aside>
-      
+
       <!-- Sidebar End -->
-      
+
