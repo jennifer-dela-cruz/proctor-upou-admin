@@ -36,8 +36,8 @@ Class Quiz extends Controller
 				$data['proctoring_type'] = $quiz->get_proctoring_type($quizId);
 				$data['total_violations'] = $quiz->get_total_violations($quizId, $studentId, $data['proctoring_type'][0]->proctoring_type);
 
-				var_dump($data['total_violations']);
-				exit;
+				// var_dump($data['total_violations']);
+				// exit;
 
 				if($success['isPosted'])
 				{
@@ -62,8 +62,8 @@ Class Quiz extends Controller
 
 					$data['total_violations'] = $quiz->get_total_violations($action, $id, $data['proctoring_type'][0]->proctoring_type);
 
-					var_dump($data['total_violations']);
-					exit;
+					// var_dump($data['total_violations']);
+					// exit;
 
 					// VIEW UPDATE PROCTOR STATUS
 					if(isset($_GET['update_status'])){
