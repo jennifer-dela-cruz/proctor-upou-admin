@@ -77,10 +77,6 @@ Class Quiz_Model
 		$arr['studentid'] = $studentid;
 		$arr['violationmsg'] = "NO_VIOLATION";
 
-		echo $query;
-		var_dump($arr);
-		exit;
-
 		$DB = new Database();
 		$data = $DB->read($query, $arr);
 		if(is_array($data))
