@@ -115,12 +115,12 @@
 									<span>
 									  <label class="form-label fw-semibold">Proctoring Type:</label>
 									  <label>
-									  <?=$data['proctoring_type']?>
-									  <?php if($data['proctoring_type'] == '1'): ?>
-											<label>Automated proctoring</label>
-									  <?php elseif($data['proctoring_type'] == '2'): ?>
-											<label>Random snapshot</label>
-									  <?php endif; ?>
+									  <?php $proctoring_type = implode(" ", $data['proctoring_type']); ?>
+										<?php if($proctoring_type == '1'): ?>
+												<label>Automated proctoring</label>
+										<?php elseif($proctoring_type == '2'): ?>
+												<label>Random snapshot</label>
+										<?php endif; ?>
 									  </label>
 									</span>
 								</div>
