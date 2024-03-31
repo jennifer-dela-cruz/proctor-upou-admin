@@ -114,7 +114,14 @@
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Proctoring Type:</label>
-									  <label>Automated Proctoring</label>
+									  <label>
+									  <?=$data['proctoring_type']?>
+									  <?php if($data['proctoring_type'] == '1'): ?>
+											<label>Automated proctoring</label>
+									  <?php else if($data['proctoring_type'] == '2'): ?>
+											<label>Random snapshot</label>
+									  <?php endif; ?>
+									  </label>
 									</span>
 								</div>
 

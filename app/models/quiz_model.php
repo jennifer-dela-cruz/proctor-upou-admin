@@ -105,6 +105,22 @@ Class Quiz_Model
 		return false;
 	}
 
+	function get_proctoring_type($quizId) {
+
+		$query = "SELECT proctoring_type FROM mdl_proctor_upou_quiz_config WHERE quiz_id = :quizid";
+
+		$arr['quizid'] = $quizId;
+
+		$DB = new Database();
+		$data = $DB->read($query, $arr);
+		if(is_array($data))
+		{
+			return $data;
+		}
+
+		return false;
+	}
+
 	function update_proctor_student_quiz($quizId, $studentId, $POST){
 
 

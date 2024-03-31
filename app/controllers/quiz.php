@@ -32,6 +32,7 @@ Class Quiz extends Controller
 				$data['proctor_status'] = $quiz->get_proctor_summary($quizId, $studentId);
 				$data['attempt_data'] = $quiz->get_quiz_attempt_by_student($quizId, $studentId);
 				$data['quiz_data'] = $quiz->get_quiz($quizId);
+				$data['proctoring_type'] = $quiz->get_proctoring_type($quizId);
 
 				// var_dump($data['attempt_data']);
 				// exit;
