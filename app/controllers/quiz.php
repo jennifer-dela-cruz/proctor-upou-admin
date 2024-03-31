@@ -14,6 +14,7 @@ Class Quiz extends Controller
 		$quiz = $this->loadModel("quiz_model");
 
 
+		$total_violations = 0;
 
 		//	VIEW QUIZ
 		if(isset($action) && $action != ""){
@@ -35,7 +36,6 @@ Class Quiz extends Controller
 				$data['proctoring_type'] = $quiz->get_proctoring_type($quizId);
 
 				// Get violation count
-				$total_violations = 0;
 				if ($data['proctoring_type'][0]->proctoring_type == '1') {
 					$total_violations = count($data['attempt_data']);
 				} elseif ($data['proctoring_type'][0]->proctoring_type == '2') {
@@ -68,7 +68,6 @@ Class Quiz extends Controller
 					$data['attempt_data'] = $quiz->get_quiz_attempt_by_student($action, $id);
 
 					// Get violation count
-					$total_violations = 0;
 					if ($data['proctoring_type'][0]->proctoring_type == '1') {
 						$total_violations = count($data['attempt_data']);
 					} elseif ($data['proctoring_type'][0]->proctoring_type == '2') {
