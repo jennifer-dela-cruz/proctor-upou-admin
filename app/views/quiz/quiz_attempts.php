@@ -187,11 +187,12 @@ use Aws\Exception\AwsException;
 									<span>
 										<label class="form-label fw-semibold">Proctoring Type:</label>
 										<label>
-										<?php if($data['proctoring_type']->proctoring_type == '1'): ?>
+											<?php var_dump($data['proctoring_type']); ?>
+										<!-- <?php //if($data['proctoring_type']->proctoring_type == '1'): ?>
 												<label>Automated proctoring</label>
-										<?php elseif($data['proctoring_type']->proctoring_type == '2'): ?>
+												<?php //elseif($data['proctoring_type']->proctoring_type == '2'): ?>
 												<label>Random snapshot</label>
-										<?php endif; ?>
+										<?php //endif; ?> -->
 										</label>
 									</span>
 								</div>
