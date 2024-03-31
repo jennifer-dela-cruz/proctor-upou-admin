@@ -118,7 +118,7 @@
 									  <?=$data['proctoring_type']?>
 									  <?php if($data['proctoring_type'] == '1'): ?>
 											<label>Automated proctoring</label>
-									  <?php else if($data['proctoring_type'] == '2'): ?>
+									  <?php elseif($data['proctoring_type'] == '2'): ?>
 											<label>Random snapshot</label>
 									  <?php endif; ?>
 									  </label>
