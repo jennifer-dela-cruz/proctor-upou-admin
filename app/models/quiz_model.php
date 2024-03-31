@@ -70,7 +70,7 @@ Class Quiz_Model
 
 					where attemptlist.proctor_upou_quiz_id = :quizid and
 						  attemptlist.proctor_upou_quiz_student_id = :studentid and
-						  attemptlist.evidence != :violationmsg
+						  attemptlist.violation != :violationmsg
 						  ";
 
 		$arr['quizid'] = $quizid;
