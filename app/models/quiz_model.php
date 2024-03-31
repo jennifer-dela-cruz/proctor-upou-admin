@@ -127,7 +127,7 @@ Class Quiz_Model
 	function get_total_violations($quizId, $studentId, $proctoringType) {
 
 		// snap proctor
-		if ($proctoringType == 1) {
+		if ($proctoringType == 2) {
 
 			$query = "SELECT COUNT(*) as count FROM mdl_proctor_upou_quiz_student_evidences
 			WHERE proctor_upou_quiz_id = :quizid and proctor_upou_quiz_student_id = :studentid and violation != :violationmsg";
