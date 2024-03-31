@@ -199,7 +199,9 @@ use Aws\Exception\AwsException;
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Total Violations:</label>
-									  <label><?=$total_violations?></label>
+									  <?php if (isset($data['proctoring_type'][0]->proctoring_type)): ?>
+									  	<label><?=$total_violations?></label>
+									  <?php endif; ?>
 									</span>
 								</div>
 
