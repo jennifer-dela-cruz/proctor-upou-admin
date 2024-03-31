@@ -53,9 +53,7 @@ Class Quiz extends Controller
 				$data['attempt_list'] = $quiz->get_quiz_attempt_list($action);
 				$data['proctor_status'] = $quiz->get_proctor_summary($action, $id);
 				$data['quiz_data'] = $quiz->get_quiz($action);
-				var_dump($action);
-				exit;
-				// $data['proctoring_type'] = $quiz->get_proctoring_type($quizId);
+				$data['proctoring_type'] = $quiz->get_proctoring_type($action);
 
 				if(isset($id) && $id != ""){
 					$data['attempt_data'] = $quiz->get_quiz_attempt_by_student($action, $id);
