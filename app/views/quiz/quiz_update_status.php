@@ -128,7 +128,7 @@
 									<span>
 									  <label class="form-label fw-semibold">Total Violations:</label>
 									  <label><?php if(@$data['attempt_data']): ?>
-												<?=count($data['attempt_data'])?>
+												<?=$total_violations?>
 											<?php endif; ?>
 									  </label>
 									</span>

@@ -124,6 +124,24 @@ Class Quiz_Model
 		return false;
 	}
 
+	function get_total_violations($quizId, $studentId) {
+
+		$query = "SELECT COUNT(*) as count FROM mdl_proctor_upou_quiz_student_evidences
+		WHERE proctor_upou_quiz_id = :quizid and proctor_upou_quiz_student_id = :studentid";
+
+		$arr['quizid'] = $quizId;
+		$arr['studentid'] = $studentId;
+
+		$DB = new Database();
+		$data = $DB->read($query, $arr);
+		if(is_array($data))
+		{
+			return $data;
+		}
+
+		return false;
+	}
+
 	function update_proctor_student_quiz($quizId, $studentId, $POST){
 
 

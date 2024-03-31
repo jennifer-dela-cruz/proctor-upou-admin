@@ -199,7 +199,7 @@ use Aws\Exception\AwsException;
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Total Violations:</label>
-									  <label><?=count($data['attempt_data'])?></label>
+									  <label><?=$total_violations?></label>
 									</span>
 								</div>
 
