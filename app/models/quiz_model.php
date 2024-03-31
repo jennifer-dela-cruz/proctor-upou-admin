@@ -70,12 +70,12 @@ Class Quiz_Model
 
 					where attemptlist.proctor_upou_quiz_id = :quizid and
 						  attemptlist.proctor_upou_quiz_student_id = :studentid and
-						  attemptlist.violation != :violationmsg
 						  ";
+						//   attemptlist.violation != :violationmsg
 
 		$arr['quizid'] = $quizid;
 		$arr['studentid'] = $studentid;
-		$arr['violationmsg'] = "NO_VIOLATION";
+		// $arr['violationmsg'] = "NO_VIOLATION";
 
 		$DB = new Database();
 		$data = $DB->read($query, $arr);
