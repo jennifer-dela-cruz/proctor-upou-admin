@@ -73,12 +73,13 @@ Class Quiz_Model
 						  attemptlist.violation != :violationmsg
 						  ";
 
-						  echo $query;
-						  exit;
-
 		$arr['quizid'] = $quizid;
 		$arr['studentid'] = $studentid;
 		$arr['violationmsg'] = "NO_VIOLATION";
+
+		echo $query;
+		var_dump($arr);
+		exit;
 
 		$DB = new Database();
 		$data = $DB->read($query, $arr);
