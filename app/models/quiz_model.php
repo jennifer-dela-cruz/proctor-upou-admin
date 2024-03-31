@@ -69,10 +69,13 @@ Class Quiz_Model
 						left JOIN mdl_course as course ON quiz.course = course.id
 
 					where attemptlist.proctor_upou_quiz_id = :quizid and
-						  attemptlist.proctor_upou_quiz_student_id = :studentid;";
+						  attemptlist.proctor_upou_quiz_student_id = :studentid and
+						  attemptlist.evidence != :violationmsg;
+						  ";
 
 		$arr['quizid'] = $quizid;
 		$arr['studentid'] = $studentid;
+		$arr['violationmsg'] = "NO_VIOLATION";
 
 		$DB = new Database();
 		$data = $DB->read($query, $arr);
