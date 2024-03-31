@@ -187,7 +187,7 @@ use Aws\Exception\AwsException;
 									<span>
 										<label class="form-label fw-semibold">Proctoring Type:</label>
 										<label>
-										<?php $proctoring_type = implode(" ", $data['proctoring_type']); ?>
+										<?php $proctoring_type = implode(" ", $data['proctoring_type']->proctoring_type); ?>
 										<?php if($proctoring_type == '1'): ?>
 												<label>Automated proctoring</label>
 										<?php elseif($proctoring_type == '2'): ?>
