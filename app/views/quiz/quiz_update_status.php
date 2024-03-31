@@ -129,7 +129,7 @@
 									  <label class="form-label fw-semibold">Total Violations:</label>
 									  <label><?php if(@$data['attempt_data']): ?>
 												<?php if (isset($data['proctoring_type'][0]->proctoring_type)): ?>
-													<label><?=$total_violations?></label>
+													<label><?=$data['total_violations']->count?></label>
 												<?php endif; ?>
 											<?php endif; ?>
 									  </label>

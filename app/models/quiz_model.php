@@ -124,13 +124,26 @@ Class Quiz_Model
 		return false;
 	}
 
-	function get_total_violations($quizId, $studentId) {
+	function get_total_violations($quizId, $studentId, $proctoringType) {
 
-		$query = "SELECT COUNT(*) as count FROM mdl_proctor_upou_quiz_student_evidences
-		WHERE proctor_upou_quiz_id = :quizid and proctor_upou_quiz_student_id = :studentid";
+		// snap proctor
+		if ($proctoringType == 1) {
 
-		$arr['quizid'] = $quizId;
-		$arr['studentid'] = $studentId;
+			$query = "SELECT COUNT(*) as count FROM mdl_proctor_upou_quiz_student_evidences
+			WHERE proctor_upou_quiz_id = :quizid and proctor_upou_quiz_student_id = :studentid and violation != :violationmsg";
+
+			$arr['quizid'] = $quizId;
+			$arr['studentid'] = $studentId;
+			$arr['violationmsg'] = "NO_VIOLATION";
+
+		// auto proctor
+		} else {
+			$query = "SELECT COUNT(*) as count FROM mdl_proctor_upou_quiz_student_evidences
+			WHERE proctor_upou_quiz_id = :quizid and proctor_upou_quiz_student_id = :studentid";
+
+			$arr['quizid'] = $quizId;
+			$arr['studentid'] = $studentId;
+		}
 
 		$DB = new Database();
 		$data = $DB->read($query, $arr);
