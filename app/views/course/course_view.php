@@ -76,12 +76,12 @@ $this->view("main_view", $data);
                                 <i class="ti ti-arrow-left"></i>
                               </a>
                             </li>
-                            <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit Course Details">
-								 <a href="<?=ROOT?>course/edit/<?=$data['course_data'][0]->id?>" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-info text-white font-medium d-flex align-items-center">
+                            <!-- <li class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit Course Details">
+								 <a href="<?//=ROOT?>course/edit/<?//=$data['course_data'][0]->id?>" type="button" class="fs-2 justify-content-center w-100 btn mb-1 btn-rounded btn-info text-white font-medium d-flex align-items-center">
 									<i class="ti ti-pencil fs-4 me-2"></i>
 									Edit
 								</a>
-                            </li> &nbsp;&nbsp;&nbsp;
+                            </li> &nbsp;&nbsp;&nbsp; -->
                           </ul>
                         </div>
 
