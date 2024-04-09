@@ -34,14 +34,14 @@
                   <span class="hide-menu">Courses</span>
                 </a>
               </li>
-			  <li class="sidebar-item  <?php echo $data['page_title'] == "Quizzes" ? 'selected' : ''?>">
-                <a class="sidebar-link" href="<?=ROOT?>quiz" aria-expanded="false">
+			  <!-- <li class="sidebar-item  <?php //echo $data['page_title'] == "Quizzes" ? 'selected' : ''?>">
+                <a class="sidebar-link" href="<?//=ROOT?>quiz" aria-expanded="false">
                   <span>
                     <i class="ti ti-file-pencil"></i>
                   </span>
                   <span class="hide-menu">Quizzes</span>
                 </a>
-              </li>
+              </li> -->
               <!-- <li class="sidebar-item <?php echo $data['page_title'] == "Exam" ? 'selected' : ''  ?>">
                 <a class="sidebar-link" href="<?=ROOT?>test" aria-expanded="false">
                   <span>
