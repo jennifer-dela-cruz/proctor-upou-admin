@@ -171,7 +171,14 @@ use Aws\Exception\AwsException;
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Email:</label>
-									  <label><?=$data['attempt_data'][0]->email?></label>
+									  <label>
+									  <?php
+									  if (isset($data['attempt_data'][0]->email)) {
+									  	echo $data['attempt_data'][0]->email;
+									  }
+
+									  ?>
+									  </label>
 									</span>
 								</div>
 								<div class="col-12">
