@@ -140,8 +140,10 @@ use Aws\Exception\AwsException;
 							  <div class="text-center">
 								<?php if(@$data['proctor_status']){
 											foreach((array) @$data['proctor_status'] as $row){
-												if($row->user_id == $data['attempt_data'][0]->studentid){
-													$photoResult = getS3Object($row->verify_id_path);
+												if (isset($data['attempt_data'][0]->studentid)) {
+													if($row->user_id == $data['attempt_data'][0]->studentid){
+														$photoResult = getS3Object($row->verify_id_path);
+													}
 												}
 											}
 										  }else{
