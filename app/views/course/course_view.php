@@ -151,10 +151,10 @@ $this->view("main_view", $data);
                       </div>
                     </div>
 					<div class="col-12">
-                      <div class="d-flex align-items-center justify-content-end gap-3">
+                      <!-- <div class="d-flex align-items-center justify-content-end gap-3">
                         <button class="btn btn-primary">Save</button>
                         <button class="btn btn-light-danger text-danger">Cancel</button>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
 
