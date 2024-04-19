@@ -62,6 +62,7 @@ Class Quiz extends Controller
 					$data['attempt_data'] = $quiz->get_quiz_attempt_by_student($action, $id);
 
 					$data['total_violations'] = $quiz->get_total_violations($action, $id, $data['proctoring_type'][0]->proctoring_type);
+					$data['total_evidence'] = $quiz->get_total_evidence($action, $id);
 
 					// var_dump($data['total_violations']);
 					// exit;
