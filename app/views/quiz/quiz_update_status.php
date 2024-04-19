@@ -205,7 +205,7 @@
               <div class="mb-3">
 				<label class="control-label col-form-label">Status</label>
 					<select name="statusselect" class="form-select">
-						<option value="" selected="selected" hidden> Select a Status </option>
+						<option value="" selected="selected" hidden> Select a status </option>
 						<option value="0"> Failed </option>
 						<option value="1"> Success </option>
 					</select>
@@ -216,7 +216,7 @@
             <div class="col-sm-12">
               <div class="mb-3">
                 <label for="reason" class="control-label col-form-label">Reason</label>
-                <input type="text" class="form-control" name="reason" id="reason" placeholder="Reason Here"/>
+                <input type="text" class="form-control" name="reason" id="reason" placeholder="Reason"/>
               </div>
             </div>
           </div>
