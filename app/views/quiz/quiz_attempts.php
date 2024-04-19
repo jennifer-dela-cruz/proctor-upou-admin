@@ -142,6 +142,8 @@ use Aws\Exception\AwsException;
 										var_dump($data['proctor_status']);
 										if (@$data['proctor_status']){
 											foreach((array) @$data['proctor_status'] as $row){
+												echo 'Display each row';
+												var_dump($row);
 												if (isset($data['attempt_data'][0]->studentid)) {
 													if($row->user_id == $data['attempt_data'][0]->studentid){
 														$photoResult = getS3Object($row->verify_id_path);
