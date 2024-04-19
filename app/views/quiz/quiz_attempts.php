@@ -343,9 +343,8 @@ use Aws\Exception\AwsException;
                         <div class="card-body p-4">
                           <h5 class="card-title fw-semibold">Evidences <span class="badge bg-secondary">
 						  <?php
-							if (isset($data['attempt_data'])) {
-								if (!$data['attempt_data'])
-									echo count($data['attempt_data']);
+							if (isset($data['total_evidence'])) {
+								echo $data['total_evidence'][0]->count;
 							}
 							?>
 						</span></h5>
