@@ -150,8 +150,6 @@ use Aws\Exception\AwsException;
 												// echo '</pre>';
 												if (isset($data['attempt_data'][0]->studentid)) {
 													if($row->user_id == $data['attempt_data'][0]->studentid){
-
-
 														$photoResult = getS3Object($row->verify_id_path);
 														// echo 'show result of S3 object';
 														// echo $photoResult;
@@ -198,7 +196,7 @@ use Aws\Exception\AwsException;
 									  <label>
 									  <?php
 									  if (isset($data['attempt_data'][0]->studentfirstname) && isset($data['attempt_data'][0]->studentlastname)) {
-									  	echo $data['attempt_data'][0]->studentfirstname + " " +  $data['attempt_data'][0]->studentlastname;
+									  	echo $data['attempt_data'][0]->studentfirstname . " " .  $data['attempt_data'][0]->studentlastname;
 									  }
 									  ?>
 									  </label>
