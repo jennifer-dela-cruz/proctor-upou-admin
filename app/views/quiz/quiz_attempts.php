@@ -341,7 +341,13 @@ use Aws\Exception\AwsException;
                     <div class="col-12">
                       <div class="card">
                         <div class="card-body p-4">
-                          <h5 class="card-title fw-semibold">Evidences <span class="badge bg-secondary"><?=count($data['attempt_data'])?></span></h5>
+                          <h5 class="card-title fw-semibold">Evidences <span class="badge bg-secondary">
+						  <?php
+							if (isset($data['attempt_data'])) {
+							echo count($data['attempt_data']);
+							}
+							?>
+						</span></h5>
 						  </s
                           <p class="card-subtitle mb-4"></p>
 							 <div class="px-4 pt-9 pb-6 d-none d-lg-block">
