@@ -345,6 +345,7 @@ use Aws\Exception\AwsException;
 						  <?php
 							if (isset($data['attempt_data'])) {
 							//echo count($data['attempt_data']);
+								var_dump($data['attempt_data']);
 							}
 							?>
 						</span></h5>
