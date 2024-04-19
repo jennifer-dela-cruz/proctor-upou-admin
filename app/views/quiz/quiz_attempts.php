@@ -150,7 +150,11 @@ use Aws\Exception\AwsException;
 												echo '</pre>';
 												if (isset($data['attempt_data'][0]->studentid)) {
 													if($row->user_id == $data['attempt_data'][0]->studentid){
+
+
 														$photoResult = getS3Object($row->verify_id_path);
+														echo 'show result of S3 object';
+														echo $photoResult;
 													}
 												}
 											}
