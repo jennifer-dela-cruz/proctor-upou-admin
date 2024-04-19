@@ -345,6 +345,8 @@ use Aws\Exception\AwsException;
 						  <?php
 							if (isset($data['total_evidence'])) {
 								echo $data['total_evidence'][0]->count;
+							} else {
+								echo '0';
 							}
 							?>
 						</span></h5>
