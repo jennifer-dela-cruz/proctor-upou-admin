@@ -176,7 +176,6 @@ use Aws\Exception\AwsException;
 									  if (isset($data['attempt_data'][0]->email)) {
 									  	echo $data['attempt_data'][0]->email;
 									  }
-
 									  ?>
 									  </label>
 									</span>
@@ -184,7 +183,13 @@ use Aws\Exception\AwsException;
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Name:</label>
-									  <label><?=$data['attempt_data'][0]->studentfirstname?> <?=$data['attempt_data'][0]->studentlastname?></label>
+									  <label>
+									  <?php
+									  if (isset($data['attempt_data'][0]->studentfirstname) && isset($data['attempt_data'][0]->studentlastname)) {
+									  	echo $data['attempt_data'][0]->studentfirstname + " " +  $data['attempt_data'][0]->studentlastname;
+									  }
+									  ?>
+									  </label>
 									</span>
 								</div>
 						  </div>
