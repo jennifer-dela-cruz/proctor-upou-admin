@@ -139,22 +139,22 @@ use Aws\Exception\AwsException;
 							  <p class="card-subtitle mb-4"></p>
 							  <div class="text-center">
 								<?php
-										echo '<pre>';
-										var_dump($data['proctor_status']);
-										echo '</pre>';
+										// echo '<pre>';
+										// var_dump($data['proctor_status']);
+										// echo '</pre>';
 										if (isset($data['proctor_status'])) {
 											foreach((array) @$data['proctor_status'] as $row){
-												echo 'Display each row';
-												echo '<pre>';
-												var_dump($row);
-												echo '</pre>';
+												// echo 'Display each row';
+												// echo '<pre>';
+												// var_dump($row);
+												// echo '</pre>';
 												if (isset($data['attempt_data'][0]->studentid)) {
 													if($row->user_id == $data['attempt_data'][0]->studentid){
 
 
 														$photoResult = getS3Object($row->verify_id_path);
-														echo 'show result of S3 object';
-														echo $photoResult;
+														// echo 'show result of S3 object';
+														// echo $photoResult;
 													}
 												}
 											}
