@@ -160,7 +160,12 @@ use Aws\Exception\AwsException;
 								<div class="col-12">
 									<span>
 									  <label class="form-label fw-semibold">Username:</label>
-									  <label><?=$data['attempt_data'][0]->username?></label>
+									  <label><?
+									  if (isset($data['attempt_data'][0]->username)) {
+									  	echo $data['attempt_data'][0]->username;
+									  }
+
+									  ?></label>
 									</span>
 								</div>
 								<div class="col-12">
