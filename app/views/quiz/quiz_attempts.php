@@ -138,7 +138,9 @@ use Aws\Exception\AwsException;
 							<div class="col-6">
 							  <p class="card-subtitle mb-4"></p>
 							  <div class="text-center">
-								<?php if(@$data['proctor_status']){
+								<?php
+										var_dump($data['proctor_status']);
+										if (@$data['proctor_status']){
 											foreach((array) @$data['proctor_status'] as $row){
 												if (isset($data['attempt_data'][0]->studentid)) {
 													if($row->user_id == $data['attempt_data'][0]->studentid){
@@ -146,7 +148,7 @@ use Aws\Exception\AwsException;
 													}
 												}
 											}
-										  }else{
+										  } else {
 												$photoResult->signedUrl = ASSETS.'assets/images/user-icon.png';
 										  }?>
 								<img src="<?=$photoResult->signedUrl?>" alt="Image not found" onerror="this.src='<?=ASSETS?>assets/images/user-icon.png';"  class="img-fluid " width="120" height="120">
